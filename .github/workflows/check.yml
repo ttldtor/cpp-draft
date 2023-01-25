@@ -70,4 +70,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           file: "source/std.pdf"
+          tags: true
           overwrite: true
