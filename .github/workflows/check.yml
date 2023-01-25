@@ -62,3 +62,13 @@ jobs:
         with:
           name: draft-snapshot
           path: source/std.pdf
+      
+      - name: release
+        if: matrix.cfg.os == 'ubuntu-22.04'
+        uses: xresloader/upload-to-github-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          file: "source/std.pdf"
+          tags: true
+          draft: true
